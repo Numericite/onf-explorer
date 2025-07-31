@@ -29,11 +29,33 @@ export const Tags: CollectionConfig = {
 			required: true,
 		},
 		{
+			type: "relationship",
+			name: "parentId",
+			label: "Étiquette parente",
+			relationTo: "tags",
+			hasMany: false,
+		},
+		{
 			name: "relatedStreaks",
 			type: "join",
 			collection: "streaks",
 			on: "tags",
 			label: "Séries associées",
+			admin: {
+				position: "sidebar",
+			},
+		},
+		{
+			name: "relatedChildTags",
+			type: "join",
+			collection: "tags",
+			on: "parentId",
+			label: "Étiquettes enfants",
+			admin: {
+				position: "sidebar",
+				defaultColumns: ["name", "tagCategory"],
+				condition: (data) => data.relatedChildTags?.docs.length > 0,
+			},
 		},
 	],
 };

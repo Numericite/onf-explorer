@@ -96,6 +96,7 @@ export interface Config {
     };
     tags: {
       relatedStreaks: 'streaks';
+      relatedChildTags: 'tags';
     };
     'tag-categories': {
       relatedTags: 'tags';
@@ -322,8 +323,14 @@ export interface Tag {
   name: string;
   description?: string | null;
   tagCategory: number | TagCategory;
+  parentId?: (number | null) | Tag;
   relatedStreaks?: {
     docs?: (number | Streak)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  relatedChildTags?: {
+    docs?: (number | Tag)[];
     hasNextPage?: boolean;
     totalDocs?: number;
   };
@@ -601,7 +608,9 @@ export interface TagsSelect<T extends boolean = true> {
   name?: T;
   description?: T;
   tagCategory?: T;
+  parentId?: T;
   relatedStreaks?: T;
+  relatedChildTags?: T;
   updatedAt?: T;
   createdAt?: T;
 }
