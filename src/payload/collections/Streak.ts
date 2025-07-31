@@ -65,7 +65,7 @@ export const Streaks: CollectionConfig = {
 				beforeChange: [
 					({ siblingData }) => {
 						// ensures data is not stored in DB
-						delete siblingData["likeCount"];
+						siblingData.likeCount = undefined;
 					},
 				],
 				afterRead: [getLikeFromStreak],

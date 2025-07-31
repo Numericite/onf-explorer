@@ -29,12 +29,6 @@
 					}
 				}
 			},
-			"performance": {
-				"noDelete": "info"
-			},
-			"complexity": {
-				"useLiteralKeys": "info"
-			},
 			"recommended": true
 		}
 	}
