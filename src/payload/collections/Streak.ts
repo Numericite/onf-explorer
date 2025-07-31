@@ -1,4 +1,4 @@
-import type { CollectionConfig, FieldHook } from "payload";
+import type { CollectionConfig } from "payload";
 import { getLikeFromStreak } from "../hooks";
 
 export const Streaks: CollectionConfig = {
