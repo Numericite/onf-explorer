@@ -8,6 +8,15 @@ import { fr } from "@payloadcms/translations/languages/fr";
 import { en } from "@payloadcms/translations/languages/en";
 
 import { Media } from "./collections/Media";
+import { Admins } from "./collections/Admin";
+import { Users } from "./collections/User";
+import { Tags } from "./collections/Tag";
+import { TagCategories } from "./collections/TagCategories";
+import { Streaks } from "./collections/Streak";
+import { Snapshots } from "./collections/Snapshot";
+import { Likes } from "./collections/Like";
+import { Comments } from "./collections/Comment";
+import { Forests } from "./collections/Forest";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -17,9 +26,21 @@ export default buildConfig({
 		importMap: {
 			baseDir: path.resolve(dirname),
 		},
+		user: "admins",
 	},
 	editor: lexicalEditor(),
-	collections: [Media],
+	collections: [
+		Admins,
+		Users,
+		Snapshots,
+		Streaks,
+		Likes,
+		Comments,
+		Forests,
+		Tags,
+		TagCategories,
+		Media,
+	],
 	secret: process.env.PAYLOAD_SECRET || "",
 	db: postgresAdapter({
 		pool: {

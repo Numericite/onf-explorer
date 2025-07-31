@@ -29,6 +29,12 @@
 					}
 				}
 			},
+			"performance": {
+				"noDelete": "warn"
+			},
+			"complexity": {
+				"useLiteralKeys": "warn"
+			},
 			"recommended": true
 		}
 	}
