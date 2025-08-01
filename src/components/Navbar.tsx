@@ -6,8 +6,8 @@ import {
 	Drawer,
 	Flex,
 	Heading,
-	Portal,
 	Icon,
+	Portal,
 	Text,
 } from "@chakra-ui/react";
 import { Link as ChakraLink } from "@chakra-ui/react";
@@ -35,7 +35,7 @@ const Navbar = () => {
 				</ChakraLink>
 				<Drawer.Root>
 					<Drawer.Trigger asChild>
-						<Button variant="plain" lineHeight="shorter">
+						<Button variant="plain">
 							<HiBars3 /> Menu
 						</Button>
 					</Drawer.Trigger>
